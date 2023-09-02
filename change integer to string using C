@@ -1,6 +1,6 @@
 /******************************************************************************
-This code reserved with "PRASHANTA CHOWDHURY"
-This is an simple code to convert any integer number into string
+             This code reserved with "PRASHANTA CHOWDHURY"
+     This is an simple code to convert any integer number into string
 *******************************************************************************/
 
 #include <stdio.h>
