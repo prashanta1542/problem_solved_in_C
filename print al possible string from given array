@@ -1,0 +1,47 @@
+/********************************************************************************************
+
+                       All rights reservs by Prashanta Chowdhury
+In This section I am solving a problem to find the all possible strign from given key word
+
+********************************************************************************************/
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+// The main recursive method to print all possible strings length k
+void printAllKLengthRec(char set[],char prefix[],int n , int k){
+    //Base condition
+    if(k==0){
+        printf("%s\n",prefix);
+        return;
+    }
+    // one by one add all characters from set and
+    // recursively call for k equals to k-1
+    for(int i=0;i<n;i++){
+        
+        char newPrefix[100];
+          
+         // Next character of input added
+        strcpy(newPrefix,prefix);
+        strncat(newPrefix,&set[i],1);
+        
+        // k is decreased, because
+        // we have added a new character
+        printAllKLengthRec(set,newPrefix,n,k-1);
+    }
+    
+}
+
+void printALLklength(char set[],int k,int n){
+    char emptyPrefix[1]="";
+    printAllKLengthRec(set,emptyPrefix,n,k);
+}
+// Driver Code
+int main(){
+    
+    char set1[]={'a','b','c','d'};
+    int k=4;
+    printALLklength(set1,k,4);
+    
+}
+
