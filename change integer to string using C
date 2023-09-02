@@ -1,0 +1,38 @@
+/******************************************************************************
+This code reserved with "PRASHANTA CHOWDHURY"
+This is an simple code to convert any integer number into string
+*******************************************************************************/
+
+#include <stdio.h>
+
+void
+tostring (char str[], int num)
+{
+  int i, rem, len = 0, n;
+
+  n = num;
+  while (n != 0)
+    {
+      len++;
+      n /= 10;
+
+    }
+  for (i = 0; i < len; i++)
+    {
+
+      rem = num % 10;
+      num = num / 10;
+      str[len - (i + 1)] = rem + '0';
+      printf ("%d \t %d\n", rem, num);
+    }
+  str[len] = '\0';
+}
+
+int main ()
+{
+  int num = 121;
+  char str[100000];
+  tostring (str, num);
+  printf ("%s", str);
+  return 0;
+}
