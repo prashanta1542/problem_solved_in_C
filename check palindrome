@@ -1,3 +1,9 @@
+/********************************************************************************************
+
+                       All rights reservs by Prashanta Chowdhury
+In This section I am solving a problem to find the palindrome number
+
+********************************************************************************************/
 int findLength(int num) {
     int len = 0;
     while (num != 0) {
