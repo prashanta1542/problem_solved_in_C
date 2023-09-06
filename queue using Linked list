@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+  int key;
+  struct Node* next;
+};
+struct Queue{
+  struct Node *front,*rear;
+};
+struct Node* newNode(int data){
+  struct Node* r=(struct Node*)malloc(sizeof(struct Node));
+  r->key=data;
+  r->next=NULL;
+  
+  return r;
+}
+struct Queue* createQueue(){
+  struct Queue* r=(struct Queue*)malloc(sizeof(struct Queue));
+  r->front=r->rear=NULL;
+  return r;
+}
+void enqueue(struct Queue* q,int data){
+  struct Node* temp=newNode(data);
+  if(q->front == NULL){
+    q->front=q->rear=temp;
+    return;
+  }
+  q->rear->next=temp;
+  q->rear=temp;
+}
+void dequeue(struct Queue* q){
+  if(q->front==NULL){
+    return;
+  }
+  struct Node* temp=q->front;
+  
+  q->front=q->front->next;
+  if(q->front==NULL){
+    q->rear=NULL;
+  }
+  
+  free(temp);
+}
+
+int main(){
+  struct Queue* q=createQueue();
+  enqueue(q,10);
+  enqueue(q,20);
+  dequeue(q);
+  enqueue(q,20);
+  enqueue(q,20);
+  
+ while(q->front != NULL){
+   printf("%d  ",(q->front)->key);
+   q->front=q->front->next;
+ }
+  return 0;
+}
+
