@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------
               All problem solved by "Prashanta Chowdhury"
-                    # problem_solved_in_C
+                    **problem_solved_in_C ** 
              100 Programin problem solved using C
 ------------------------------------------------------------------------*/
 #include <stdio.h>
