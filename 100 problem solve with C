@@ -1,5 +1,9 @@
 /*-----------------------------------------------------------------------------
                100 basic problem solve in this program
+Solving 100 programming problems in C is important because it helps individuals 
+develop and enhance their programming skills, prepares them for coding interviews, 
+and provides a versatile portfolio of work that demonstrates their abilities to
+              potential employers.
 -----------------------------------------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
