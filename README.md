@@ -1,8 +1,8 @@
-/*---------------------------------------------------------------------------
-              All problem solved by "Prashanta Chowdhury"
-                    **problem_solved_in_C ** 
-             100 Programin problem solved using C
-------------------------------------------------------------------------*/
+
+             # All problem solved by "Prashanta Chowdhury"
+                   ## **problem_solved_in_C ** 
+            ### 100 Programin problem solved using C
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
