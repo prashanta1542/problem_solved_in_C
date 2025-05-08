@@ -1,0 +1,50 @@
+/*--------------------------------------------------------------------------------------
+                     This code is reserved by "Prashanta Chowdhury"
+                  In this code I am implementation DFG traversal using C
+--------------------------------------------------------------------------------------*/
+#include <stdio.h>
+#include <stdbool.h>
+
+#define MAX_VERTICES 100
+
+struct Node{
+  int V;
+  bool visited[MAX_VERTICES];
+  int addList[MAX_VERTICES][MAX_VERTICES];
+};
+
+void createGraph(struct Node* g,int V){
+  g->V=V;
+  for(int i=0;i<V;i++){
+    g->visited[i]=false;
+    for(int j=0;j<V;j++){
+      g->addList[i][j]=0;
+    }
+  }
+}
+
+void addEdge(struct Node* g,int V,int W){
+  g->addList[V][W]=1;
+}
+void DFS(struct Node* g,int V){
+  g->visited[V]=true;
+  printf("%d  ",V);
+  for(int i=0;i<g->V;i++){
+    if(g->addList[V][i] && !g->visited[i]){
+      DFS(g,i);
+    }
+    
+  }
+}
+int main(){
+  struct Node g;
+  createGraph(&g,4);
+    addEdge(&g, 0, 1);
+    addEdge(&g, 0, 2);
+    addEdge(&g, 1, 2);
+    addEdge(&g, 2, 0);
+    addEdge(&g, 2, 3);
+    addEdge(&g, 3, 3);
+    DFS(&g,1);
+    return 0;
+}

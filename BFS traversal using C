@@ -1,0 +1,78 @@
+/* ---------------------------------------------------
+
+      This code is reserved by " PRASHANTA CHOWDHURY"
+  In this code , I am impliment an BFS graph traversal using adjacent
+                          matrix.
+Time Complexity: O(V+E), where V is the number of nodes and E is the number of edges.
+Auxiliary Space: O(V)
+-----------------------------------------------------*/
+
+#include <stdio.h>
+#include<stdlib.h>
+#include<stdbool.h>
+
+#define MAX_VERTICES 50
+
+typedef struct Graph_t{
+  int V;
+  bool adj[MAX_VERTICES][MAX_VERTICES];
+  
+}graph;
+
+graph* createGraph(int v){
+  graph* g=malloc(sizeof(graph));
+  g->V=v;
+  for(int i=0;i<v;i++){
+    for(int j=0;j<v;j++){
+      g->adj[i][j]=false;
+    }
+  }
+  return g;
+}
+void destruct(graph *g){ free(g);}
+
+void addEdge(graph *g , int v , int w){
+  g->adj[v][w]=true;
+}
+ void graphBFS(graph* g,int s){
+   bool visited[MAX_VERTICES];
+   for(int i=0;i<g->V;i++){
+     visited[i]=false;
+   }
+   // create queue
+   int queue[MAX_VERTICES];
+   int f=0,r=0; //Rear=r and Front=f
+   visited[s] = true;
+   queue[r++]=s;
+   
+   while(f != r){
+     // Dequeue a vertex from queue and print it
+     s=queue[f++];
+     printf("%d ",s);
+      // Get all adjacent vertices of the dequeued
+      // vertex s.
+      // If an adjacent has not been visited,
+      // then mark it visited and enqueue it
+     for(int i=0;i<g->V;i++){
+       if(g->adj[s][i] && !visited[i]){
+         visited[i]=true;
+         queue[r++]=i;
+       }
+     }
+   }
+ }
+int main(){
+  graph *g=createGraph(4);
+  
+  addEdge(g,0,1);
+  addEdge(g,0,2);
+  addEdge(g,1,2);
+  addEdge(g,2,0);
+  addEdge(g,2,3);
+  addEdge(g,3,3);
+  
+  graphBFS(g , 1);
+  destruct(g);
+  return 0;
+  
+}

@@ -1,0 +1,42 @@
+/********************************************************************************************
+
+                       All rights reservs by Prashanta Chowdhury
+In This section I am solving a problem to find the palindrome number
+
+********************************************************************************************/
+int findLength(int num) {
+    int len = 0;
+    while (num != 0) {
+        len++;
+        num /= 10;
+    }
+    return len;
+}
+
+// Function to check if a number is a palindrome
+bool checkPalindrome(int num, int len) {
+    int originalNum = num;
+    int reverseNum = 0;
+    
+    while (num != 0) {
+        int digit = num % 10;
+        reverseNum = reverseNum * 10 + digit;
+        num /= 10;
+    }
+    
+    return originalNum == reverseNum;
+}
+
+int main() {
+    int num = 12111;
+    int length = findLength(num);
+    bool isPalindrome = checkPalindrome(num, length);
+    
+    if (isPalindrome) {
+        printf("Number is a palindrome.\n");
+    } else {
+        printf("Number is not a palindrome.\n");
+    }
+    
+    return 0;
+}

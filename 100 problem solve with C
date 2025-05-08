@@ -1,8 +1,10 @@
-
-             # All problem solved by "Prashanta Chowdhury"
-                   ## *problem_solved_in_C* 
-            ### 100 Programin problem solved using C
-
+/*-----------------------------------------------------------------------------
+               100 basic problem solve in this program
+Solving 100 programming problems in C is important because it helps individuals 
+develop and enhance their programming skills, prepares them for coding interviews, 
+and provides a versatile portfolio of work that demonstrates their abilities to
+              potential employers.
+-----------------------------------------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -1208,5 +1210,4 @@ int main() {
     printf("99. 2 to the power of 5 using loop: %.2lf\n", powerWithLoop(2.0, 5));
     return 0;
 }
-
 
